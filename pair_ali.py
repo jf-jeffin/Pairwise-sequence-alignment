@@ -14,8 +14,8 @@ def tbstartloc(scoreMatrix: list[list],local_ali,maxvalues=1):
     #returns location in matrix to start trace back    
     if local_ali=='l' and maxvalues:#location with max score
         maxs=0
-        for r in range(1,ls+1):
-            for c in range(1,gs+1):
+        for r in range(1,ls+1):#r for row, nr for next row
+            for c in range(1,gs+1):#c for column, nc for next col
                 if scoreMatrix[r][c]>maxs:
                     maxs=scoreMatrix[r][c]
                     mr=r
@@ -72,10 +72,7 @@ if local_ali=='l':
 else:
     while r<len(sm) and sr<ls:
         while c<len(sm[0]) and sc<gs :
-            pr,pc=r-1,c-1
-           
-           
-            
+            pr,pc=r-1,c-1#previous row(pr) 
             sm[r].append(max(sm[pr][pc]+sco(s[sc],sd[sr]),sm[pr][c]+gap,sm[r][pc]+gap))
             c,sc=c+1,sc+1
         c,sc=1,0
