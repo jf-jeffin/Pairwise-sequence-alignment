@@ -63,7 +63,9 @@ if local_ali=='l':
     while r<len(sm) and sr<ls:
         while c<len(sm[0]) and sc<gs:
             pr,pc=r-1,c-1
-            sm[r][c]=max(0,sm[pr][pc]+sco(s[sc],sd[sr]),sm[pr][c]+gap,sm[r][pc]+gap)
+            sm[r][c]=max(0,sm[pr][pc]+sco(s[sc],
+                        sd[sr]),sm[pr][c]+gap,
+                         sm[r][pc]+gap)
             c,sc=c+1,sc+1
         c,sc=1,0
         r,sr=r+1,sr+1
